@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activity 4 - WebApp Deployment</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: skyblue; /* Set background color to sky blue inside the border */
+        }
+
+        input[type="text"] {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Predict Profit by using R&D Spending</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="spending" placeholder="R&D Spending" required="required" /><br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict profit</button>
+    </form>
+
+    <br>
+    <h4 style="color: Red;">
+    {{ prediction_output }} </h4>
+</body>
+</html>
